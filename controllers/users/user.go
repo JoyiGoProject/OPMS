@@ -75,6 +75,7 @@ func (this *LoginUserController) Post() {
 		//this.SetSession("userPermissionModelc", permission.Modelc)
 
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "贺喜你，登录成功"}
+		this.TplName = "index.tpl"
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "登录失败"}
 	}
