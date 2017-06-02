@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"net/http"
+	"opms/initial"
 	"opms/models"
 	_ "opms/routers"
 
@@ -12,6 +13,7 @@ import (
 
 func main() {
 	models.InitDB()
+	initial.InitTemplate()
 	beego.InsertFilter("/*", beego.BeforeRouter, FilterUser)
 	beego.ErrorHandler("404", page_not_found)
 	beego.ErrorHandler("401", page_note_permission)
